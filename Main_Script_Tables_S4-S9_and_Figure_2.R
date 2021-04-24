@@ -34,17 +34,17 @@ PAR2 <- expand.grid(birth = c(0.1),
 PAR <- rbind(PAR1, PAR2)
 PAR
 
-## Run the simulation and salve the NRMSE in .csv file
+## Run the simulation and save the NRMSE in .csv file
 
-# Create directory to salve the results
+# Create directory to save the results
 dir.create("Results")
 
-# Set main parameters to simulation
+# Set main parameters to the simulation
 # This can take a long time to finish
 
-# Set main parameters to simulation
+# Set main parameters to the simulation
 n.rep <- 1000 # Number of repetition
-parallel <- NULL # Number of parallel processes, it depends on the computer that running the analysis
+parallel <- NULL # Number of parallel processes, it depends on the computer that is running the analysis
 
 for(i in 1:nrow(PAR)){
 	print(i)

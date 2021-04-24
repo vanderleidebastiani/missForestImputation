@@ -2,7 +2,7 @@
 
 # Main functions
 
-# Function to data simulation, imputation by missForest and get the NRMSE
+# Function to data simulation, imputation by missForest and to get the NRMSE
 # parameters = A data.frame with only one row and eight columns, the names of columns are all parameters setting to run the simulation
 get.missForest.Error <- function(parameters){
 	# Simulate the phylogenetic tree

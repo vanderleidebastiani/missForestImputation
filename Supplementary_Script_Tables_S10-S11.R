@@ -17,11 +17,11 @@ source("Supplementary_functions.R")
 PAR1 <- expand.grid(birth = c(0.1), # Speciation rate in the phylogenetic tree
 					death = c(0), # Extinction rate in the phylogenetic tree
 					n.spp = c(100), # Number of species in the phylogenetic tree and in the dataset
-					lambda = c(0.2, 0.6, 1, 1.2), # Phylogenetic signal, Pagel lambda and Grafen rho
+					lambda = c(0.2, 0.6, 1, 1.2), # Phylogenetic signal, Pagel's lambda and Grafen's rho
 					n.traits = c(3, 5,10), # Number of species traits
-					dependent = TRUE, # Logical to specify if set correlation between traits
+					dependent = TRUE, # Logical argument to specify if set correlation between traits
 					cor.traits = c(0.1, 0.25, 0.5, 0.75, 0.9), # Correlation between traits
-					noNA = c(0.05, 0.10, 0.20, 0.30, 0.40, 0.50)) # Proportion of entries cell in trait dataset
+					noNA = c(0.05, 0.10, 0.20, 0.30, 0.40, 0.50)) # Proportion of entry cells in trait dataset
 PAR2 <- expand.grid(birth = c(0.1), 
 					death = c(0), 
 					n.spp = c(100), 
@@ -34,8 +34,8 @@ PAR2 <- expand.grid(birth = c(0.1),
 PAR <- rbind(PAR1, PAR2)
 PAR
 
-# Set main parameters to simulation
-n.rep <- 1000 # Number of repetition
+# Set main parameters for the simulation
+n.rep <- 1000 # Number of repetitions
 parallel <- NULL # Number of parallel processes, it depends on the computer that running the analysis
 
 for(i in 1:nrow(PAR)){

@@ -2,7 +2,7 @@
 
 # Supplementary functions
 
-# Function to data simulation and get the cumulative proportion of eigenvalue explanation in PVR
+# Function for data simulation and to get the cumulative proportion of eigenvalue explanation in PVR
 # parameters = A data.frame with only one row and three columns, the names of columns are all parameters setting to run the simulation
 get.PVR <- function(parameters){
 	# Simulate the phylogenetic tree
@@ -38,7 +38,7 @@ get.K <- function(parameters){
 	tree <- geiger::drop.extinct(geiger::sim.bdtree(b = parameters$birth, d = parameters$death, stop = "taxa", n = parameters$n.spp, extinct = FALSE))
 	tree$tip.label <- sprintf("Sp_%.4d", 1:length(tree$tip.label))	
 	tree <- ape::makeNodeLabel(tree, method = "number", prefix = "Node")
-	# Transform tree using Pagel lambda and Grafen rho methods
+	# Transform tree using Pagel's lambda and Grafen's rho methods
 	if(parameters$lambda<=1){
 		tree.lambda <- geiger::rescale(tree, model = "lambda", parameters$lambda)
 	} else{
@@ -62,7 +62,7 @@ get.K <- function(parameters){
 
 # Function to repeat the simulation with each parameter combination (K statistic)
 # parameters = A data.frame with only one row and seven columns, the names of columns are all parameters setting to run the simulation
-# n.rep = The number of repetition
+# n.rep = The number of repetitions
 RUN.K <- function(parameters, n.rep){
 	f <- function(x, parameters){
 		RES <- get.K(parameters)
@@ -73,7 +73,7 @@ RUN.K <- function(parameters, n.rep){
 }
 
 
-# Function to data simulation, imputation by random value and get the NRMSE
+# Function for data simulation, imputation by random value and to estimate NRMSE
 # parameters = A data.frame with only one row and eight columns, the names of columns are all parameters setting to run the simulation
 get.Random.Error <- function(parameters){
 	# Simulate the phylogenetic tree

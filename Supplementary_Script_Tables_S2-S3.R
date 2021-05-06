@@ -15,8 +15,8 @@ source("Supplementary_functions.R")
 PAR1 <- expand.grid(birth = c(0.1), # Speciation rate in the phylogenetic tree
 				   death = c(0), # Extinction rate in the phylogenetic tree
 				   n.spp = c(100), # Number of species in the phylogenetic tree and in the dataset
-				   lambda = c(0.2, 0.6, 1, 1.2), # Phylogenetic signal, Pagel lambda and Grafen rho
-				   dependent = TRUE, # Logical to specify if set correlation between traits 
+				   lambda = c(0.2, 0.6, 1, 1.2), # Phylogenetic signal, Pagel's lambda and Grafen's rho
+				   dependent = TRUE, # Logical argument to specify if set correlation between traits 
 				   cor.traits = c(0.1, 0.25, 0.5, 0.75, 0.9), # Correlation between traits
 				   n.traits = c(3, 5, 10)) # Number of species traits
 PAR2 <- expand.grid(birth = c(0.1),
@@ -33,8 +33,8 @@ PAR
 
 ## Run the simulation 
 
-# Set main parameters to simulation
-n.rep <- 1000 # Number of repetition
+# Set main parameters for the simulation
+n.rep <- 1000 # Number of repetitions
 
 RESULTS.K.list <- vector("list", nrow(PAR))
 for(i in 1:nrow(PAR)){

@@ -14,7 +14,7 @@ source("Supplementary_functions.R")
 PAR <- expand.grid(birth = c(0.1), # Speciation rate in the phylogenetic tree
 				   death = c(0), # Extinction rate in the phylogenetic tree
 				   n.spp = c(50, 100), # Number of species in the phylogenetic tree and in the dataset
-				   lambda = c(0.2, 0.6, 1, 1.2), # Phylogenetic signal, Pagel lambda and Grafen rho
+				   lambda = c(0.2, 0.6, 1, 1.2), # Phylogenetic signal, Pagel's lambda and Grafen's rho
 				   dependent = FALSE, # Logical to specify if set correlation between traits 
 				   cor.traits = c(0), # Correlation between traits
 				   n.traits = c(1)) # Number of species traits
